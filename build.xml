@@ -1,0 +1,21 @@
+<project>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+
+    <target name="jar" depends=""
+        description="generate the distribution">
+    <!-- Create the distribution directory -->
+    <mkdir dir="build/jar"/>
+
+    <!-- Put everything in ${build} into the wewaz-${DSTAMP}.jar file -->
+    <jar destfile="build/jar/bookingwz.jar" basedir="build"></jar>
+  </target>
+
+</project>
